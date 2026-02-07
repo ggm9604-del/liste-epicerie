@@ -1,4 +1,4 @@
-# 📋 Liste d'Épicerie Partagée
+# 📋 Liste d'Épicerie Partagée Monette
 
 Une application web progressive (PWA) pour gérer une liste d'épicerie partagée en temps réel avec ta conjointe et ta fille.
 
@@ -178,3 +178,4 @@ Tu peux demander :
 ---
 
 **Créée avec ❤️ - Liste d'épicerie partagée en temps réel**
+
