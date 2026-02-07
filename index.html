@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="description" content="Liste d'épicerie partagée en temps réel">
+    <title>Liste d'Épicerie</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%234CAF50' width='192' height='192'/><text x='50%' y='50%' font-size='100' fill='white' text-anchor='middle' dominant-baseline='middle'>🛒</text></svg>">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Liste d'Épicerie</h1>
+            <p class="help-text">Cliquez sur le nom d'une liste pour l'éditer</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" data-list="Points">Points</button>
+            <button class="tab-button" data-list="IGA">IGA</button>
+            <button class="tab-button" data-list="Pharmacie">Pharmacie</button>
+            <button class="tab-button" data-list="Costco">Costco</button>
+        </div>
+
+        <div class="list-container">
+            <!-- Liste Points -->
+            <div class="list-section active" data-list="Points">
+                <div class="list-header">
+                    <h2 class="list-name" contenteditable="false">📝 Points</h2>
+                    <div class="sort-buttons">
+                        <button class="sort-btn" data-sort="asc" title="Ordre A→Z">A→Z</button>
+                        <button class="sort-btn" data-sort="desc" title="Ordre Z→A">Z→A</button>
+                    </div>
+                </div>
+                <div class="help-section">
+                    <p>💡 <strong>Comment ajouter un article :</strong> Écrivez dans le champ ci-dessous</p>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="add-item-input" placeholder="Ajouter un article (Points)">
+                    <button class="add-btn">+</button>
+                </div>
+                <ul class="items-list" data-list="Points"></ul>
+            </div>
+
+            <!-- Liste IGA -->
+            <div class="list-section" data-list="IGA">
+                <div class="list-header">
+                    <h2 class="list-name" contenteditable="false">🛒 IGA</h2>
+                    <div class="sort-buttons">
+                        <button class="sort-btn" data-sort="asc" title="Ordre A→Z">A→Z</button>
+                        <button class="sort-btn" data-sort="desc" title="Ordre Z→A">Z→A</button>
+                    </div>
+                </div>
+                <div class="help-section">
+                    <p>💡 <strong>Double-cliquez</strong> pour éditer | <strong>Glissez à gauche</strong> pour supprimer | <strong>Tapez</strong> le point pour cocher/décocher</p>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="add-item-input" placeholder="Ajouter un article (IGA)">
+                    <button class="add-btn">+</button>
+                </div>
+                <ul class="items-list" data-list="IGA"></ul>
+            </div>
+
+            <!-- Liste Pharmacie -->
+            <div class="list-section" data-list="Pharmacie">
+                <div class="list-header">
+                    <h2 class="list-name" contenteditable="false">💊 Pharmacie</h2>
+                    <div class="sort-buttons">
+                        <button class="sort-btn" data-sort="asc" title="Ordre A→Z">A→Z</button>
+                        <button class="sort-btn" data-sort="desc" title="Ordre Z→A">Z→A</button>
+                    </div>
+                </div>
+                <div class="help-section">
+                    <p>💡 <strong>Double-cliquez</strong> pour éditer | <strong>Glissez à gauche</strong> pour supprimer | <strong>Tapez</strong> le point pour cocher/décocher</p>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="add-item-input" placeholder="Ajouter un article (Pharmacie)">
+                    <button class="add-btn">+</button>
+                </div>
+                <ul class="items-list" data-list="Pharmacie"></ul>
+            </div>
+
+            <!-- Liste Costco -->
+            <div class="list-section" data-list="Costco">
+                <div class="list-header">
+                    <h2 class="list-name" contenteditable="false">🏬 Costco</h2>
+                    <div class="sort-buttons">
+                        <button class="sort-btn" data-sort="asc" title="Ordre A→Z">A→Z</button>
+                        <button class="sort-btn" data-sort="desc" title="Ordre Z→A">Z→A</button>
+                    </div>
+                </div>
+                <div class="help-section">
+                    <p>💡 <strong>Double-cliquez</strong> pour éditer | <strong>Glissez à gauche</strong> pour supprimer | <strong>Tapez</strong> le point pour cocher/décocher</p>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="add-item-input" placeholder="Ajouter un article (Costco)">
+                    <button class="add-btn">+</button>
+                </div>
+                <ul class="items-list" data-list="Costco"></ul>
+            </div>
+        </div>
+
+        <div class="sync-status">
+            <span class="status-indicator">●</span>
+            <span class="status-text">Synchronisation en cours...</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.38.4"></script>
+    <script src="/app.js"></script>
+</body>
+</html>
