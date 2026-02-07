@@ -353,6 +353,14 @@ header h1 {
     background: white;
 }
 
+/* Desktop: show delete button on hover for mouse users */
+@media (hover: hover) and (pointer: fine) {
+    .list-item:hover .delete-btn {
+        opacity: 1;
+        width: auto;
+    }
+}
+
 .list-item.empty-state {
     padding: 20px;
     text-align: center;
